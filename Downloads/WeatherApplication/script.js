@@ -1,5 +1,4 @@
 const apiKey = 'f91354da343745dc1405bf15570fcd9e'; //  weather API key 
-OpenWeatherMap
 const weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 document.addEventListener('DOMContentLoaded', () => {
