@@ -1,4 +1,5 @@
-const apiKey = 'f91354da343745dc1405bf15570fcd9e'; //  weather API key from OpenWeatherMap
+const apiKey = 'f91354da343745dc1405bf15570fcd9e'; //  weather API key 
+OpenWeatherMap
 const weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -49,7 +50,31 @@ function displayWeather(data) {
     temperatureElement.textContent = `Temperature: ${data.main.temp} °C`;
     descriptionElement.textContent = `Weather: ${data.weather[0].description}`;
 
-    if (data.weather[0].main === 'Thunderstorm' || data.weather[0].main === 'Tornado') {
+    const weatherCondition = data.weather[0].main.toLowerCase();
+    document.body.className = ''; // Clear any existing weather classes
+
+    switch (weatherCondition) {
+        case 'clear':
+            document.body.classList.add('sunny');
+            break;
+        case 'clouds':
+            document.body.classList.add('cloudy');
+            break;
+        case 'rain':
+        case 'drizzle':
+            document.body.classList.add('rainy');
+            break;
+        case 'thunderstorm':
+            document.body.classList.add('thunderstorm');
+            break;
+        case 'snow':
+            document.body.classList.add('snowy');
+            break;
+        default:
+            document.body.classList.add('sunny');
+    }
+
+    if (weatherCondition === 'thunderstorm' || weatherCondition === 'tornado') {
         alertElement.textContent = 'ALERT: Severe weather conditions!';
     } else {
         alertElement.textContent = '';

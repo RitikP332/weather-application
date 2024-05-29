@@ -4,16 +4,17 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f8ff;
     margin: 0;
+    background: #f0f8ff;
+    transition: background 0.5s ease-in-out;
 }
 
 #app {
     text-align: center;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #weather-info p {
@@ -23,4 +24,25 @@ body {
 #alert {
     color: red;
     font-weight: bold;
+}
+
+/* Weather-specific backgrounds */
+.sunny {
+    background: url('images/sunny.gif') no-repeat center center/cover;
+}
+
+.cloudy {
+    background: url('images/cloudy.gif') no-repeat center center/cover;
+}
+
+.rainy {
+    background: url('images/rainy.gif') no-repeat center center/cover;
+}
+
+.thunderstorm {
+    background: url('images/thunderstorm.gif') no-repeat center center/cover;
+}
+
+.snowy {
+    background: url('images/snowy.gif') no-repeat center center/cover;
 }
